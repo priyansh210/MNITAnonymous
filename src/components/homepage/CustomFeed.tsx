@@ -1,7 +1,7 @@
 import { INFINITE_SCROLL_PAGINATION_RESULTS } from '@/config'
 import { getAuthSession } from '@/lib/auth'
 import { db } from '@/lib/db'
-import PostFeed from './PostFeed'
+import PostFeed from '../PostFeed'
 import { notFound } from 'next/navigation'
 
 const CustomFeed = async () => {
@@ -19,7 +19,7 @@ const CustomFeed = async () => {
         },
     })
 
-    const posts = await db.post.findMany({
+    let posts = await db.post.findMany({
         where: {
             Community: {
                 name: {
@@ -39,6 +39,21 @@ const CustomFeed = async () => {
         take: INFINITE_SCROLL_PAGINATION_RESULTS,
     })
 
+    const posts2 = await db.post.findMany({
+        orderBy: {
+            createdAt: 'desc',
+        },
+        include: {
+            votes: true,
+            author: true,
+            comments: true,
+            Community: true,
+        },
+        take: INFINITE_SCROLL_PAGINATION_RESULTS, // 4 to demonstrate infinite scroll, should be higher in production
+    })
+
+    posts = posts.concat(posts2)
+    console.log(posts)
     return <PostFeed initialPosts={posts} />
 }
 
