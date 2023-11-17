@@ -52,7 +52,9 @@ export const CustomFeed = async () => {
         take: INFINITE_SCROLL_PAGINATION_RESULTS, // 4 to demonstrate infinite scroll, should be higher in production
     });
 
-    posts = posts.concat(posts2);
+    if (posts.length == 0) {
+        posts = posts2
+    }
 
     return <PostFeed initialPosts={posts} />;
 }
