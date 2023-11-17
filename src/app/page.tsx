@@ -7,7 +7,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'AnonymousMNIT',
+  title: 'Campus Connect',
   description: 'An Anonymous Post app for MNIT students built with Next.js and TypeScript.',
 }
 
@@ -27,7 +27,7 @@ export default async function Home() {
 
         {/* subreddit info */}
         <div className='overflow-hidden h-fit rounded-lg border border-gray-200 order-first md:order-last'>
-          <div className='bg-[#ffe8c2] px-6 py-4'>
+          <div className='bg-[#D9E7F5] px-6 py-4'>
             <p className='font-semibold py-3 flex items-center gap-1.5'>
               <HomeIcon className='h-4 w-4' />
               Home

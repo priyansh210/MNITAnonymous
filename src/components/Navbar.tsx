@@ -12,9 +12,9 @@ const Navbar = async () => {
             <div className="container max-w-7xl h-full mx-auto flex items-center justify-between gap-2">
                 {/* <logo/> */}
                 <Link href='/' className="flex gap-2 items-center">
-                    <Icons.logo className="h-10 w-10 sm:h-8 sm:w-8" />
-                    <p className="hidden text-zinc-700 text-sm font-medium md:block">
-                        AnonymousMNIT
+                    <Icons.logo className="h-12 w-12 sm:h-10 sm:w-10" />
+                    <p className="hidden text-zinc-900 text-sm font-medium md:block">
+                        CampusConnect
                     </p>
                 </Link>
 

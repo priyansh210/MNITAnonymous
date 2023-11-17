@@ -18,7 +18,7 @@ const UserAccountNav: FC<UserAccountNavProps> = ({ user }) => {
     return <DropdownMenu>
         <DropdownMenuTrigger>
             <UserAvatar
-                className='h-8 w-8'
+                className='h-10 w-10'
                 user={{
                     name: user.name || null,
                     image: user.image || null,
